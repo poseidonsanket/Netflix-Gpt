@@ -22,6 +22,6 @@ Currently, two official plugins are available:
     - Movie Suggestions
         - Movie Lists Based On Categories
 
--NetFlixGpt
+- NetFlixGpt
     - Search Bar
     - Movie Suggestions
