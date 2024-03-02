@@ -1,5 +1,5 @@
-const  App = () =>  {
-  return <div>HI</div>;
-}
+const App = () => {
+  return <div className="font-bold">Hi</div>;
+};
 
 export default App;
