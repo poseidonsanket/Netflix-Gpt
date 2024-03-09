@@ -2,6 +2,11 @@ import React from "react";
 import Header from "./Header";
 import { useState, useRef } from "react";
 import { checkValidData } from "../utils/Validate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/Firebase";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -15,14 +20,46 @@ const Login = () => {
   };
   const handleButtonClick = () => {
     //Form Validation
-    const nameValue = name.current.value;
-    const emailValue = email.current.value;
-    const passwordValue = password.current.value;
+    const nameValue = name.current ? name.current.value : "First Last";
+    const emailValue = email.current ? email.current.value : "";
+    const passwordValue = password.current ? password.current.value : "";
     const message = checkValidData(emailValue, passwordValue, nameValue);
     setErrorMessage(message);
     console.log(message);
 
     //After Form Validation SignUp/SignIn
+    if (message) return;
+
+    if (!isSignInForm) {
+      //Sign Up Logic
+      createUserWithEmailAndPassword(auth, emailValue, passwordValue)
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "-" + errorMessage);
+          // ..
+        });
+    } else {
+      //Sign In Logic
+      signInWithEmailAndPassword(auth, emailValue, passwordValue)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "-" + errorMessage);
+        });
+    }
   };
   return (
     <div className="">
