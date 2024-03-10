@@ -10,7 +10,6 @@ const useTrailerVideo = (movieId) => {
       `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=fb7bb23f03b6994dafc674c074d01761`
     );
     const json = await data.json();
-    console.log(json.results);
 
     const filteredData = json.results.filter(
       (video) => video.name == "Official Trailer"

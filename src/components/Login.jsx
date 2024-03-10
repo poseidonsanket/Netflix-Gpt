@@ -18,7 +18,6 @@ const Login = () => {
   const password = useRef(null);
   const name = useRef(null);
   const toggleSignInForm = () => {
-    console.log(isSignInForm);
     setIsSignInForm(!isSignInForm);
   };
   const handleButtonClick = () => {
