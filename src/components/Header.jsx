@@ -3,6 +3,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { FaCircleUser } from "react-icons/fa6";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -35,8 +36,12 @@ const Header = () => {
         </g>
       </svg>
       {user && (
-        <div className="flex items-center">
-          <p className="p-2 font-bold">{user.displayName}</p>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center justify-center">
+            <p className="p-2 font-bold">{user.displayName}</p>
+            <FaCircleUser className="w-6 h-6" />
+          </div>
+
           <button
             className="font-bold text-white bg-red-700 rounded-lg p-3"
             onClick={handleSignOut}
