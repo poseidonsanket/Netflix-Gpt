@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
-import { useDispatch } from "react-redux";
-import { addNowPlayingMovies } from "../utils/MovieSlice";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./SecondaryContainer";
 
 const Browse = () => {
   useNowPlayingMovies();
   return (
-    <div className="flex justify-between">
+    <div className="">
       <Header />
+      <MainContainer />
+      <SecondaryContainer />
     </div>
   );
 };

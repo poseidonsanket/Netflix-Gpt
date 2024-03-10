@@ -48,7 +48,7 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
   return (
-    <div className="absolute px-12 py-8 bg-gradient-to-b from-black w-[100%] z-10 flex justify-between">
+    <div className="absolute px-12 py-8 bg-gradient-to-t from-black w-[100%] z-10 flex justify-between">
       <svg
         viewBox="0 0 111 30"
         version="1.1"
