@@ -7,6 +7,7 @@ import { FaCircleUser } from "react-icons/fa6";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/UserSlice";
+import { USER_AVATAR } from "../utils/constants";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -51,8 +52,6 @@ const Header = () => {
       <svg
         viewBox="0 0 111 30"
         version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
         aria-hidden="true"
         role="img"
         fill="rgb(229, 9, 20)"
@@ -65,8 +64,7 @@ const Header = () => {
       {user && (
         <div className="flex items-center gap-4">
           <div className="flex items-center justify-center">
-            <p className="p-2 font-bold">{user.displayName}</p>
-            <FaCircleUser className="w-6 h-6" />
+            <img src={USER_AVATAR} />
           </div>
 
           <button
