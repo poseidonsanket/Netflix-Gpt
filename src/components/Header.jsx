@@ -8,9 +8,12 @@ import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/UserSlice";
 import { USER_AVATAR } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/GptSlice";
+import { SUPPORTED_LANGUAGES } from "../utils/constants";
+import { changeLanguage } from "../utils/LanguageSlice";
 
 const Header = () => {
   const navigate = useNavigate();
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const handleSignOut = () => {
@@ -47,8 +50,13 @@ const Header = () => {
     //Unsubscribe when component will unMount
     return () => unsubscribe();
   }, []);
+
   const handleGptSearch = () => {
     dispatch(toggleGptSearchView());
+  };
+
+  const handleLanguageChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
   };
   return (
     <div className="absolute px-12 py-8 bg-gradient-to-b from-black w-[100%] z-10 flex justify-between">
@@ -66,14 +74,25 @@ const Header = () => {
       </svg>
       {user && (
         <div className="flex items-center gap-4">
-          {
-            <button
-              className="px-4 py-2 text-white bg-red-700 rounded-lg"
-              onClick={handleGptSearch}
+          {showGptSearch && (
+            <select
+              className="p-2 bg-gray-900 text-white"
+              onChange={handleLanguageChange}
             >
-              GPT Search
-            </button>
-          }
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <option key={lang.identifier} value={lang.identifier}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
+          <button
+            className="px-4 py-2 text-white bg-red-700 rounded-lg"
+            onClick={handleGptSearch}
+          >
+            {showGptSearch ? "HomePage" : "GPT Search"}
+          </button>
+
           <div className="flex items-center justify-center">
             <img src={USER_AVATAR} />
           </div>
