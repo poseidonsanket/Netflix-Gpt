@@ -3,11 +3,11 @@ import { signOut } from "firebase/auth";
 import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { FaCircleUser } from "react-icons/fa6";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/UserSlice";
 import { USER_AVATAR } from "../utils/constants";
+import { toggleGptSearchView } from "../utils/GptSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -47,8 +47,11 @@ const Header = () => {
     //Unsubscribe when component will unMount
     return () => unsubscribe();
   }, []);
+  const handleGptSearch = () => {
+    dispatch(toggleGptSearchView());
+  };
   return (
-    <div className="absolute px-12 py-8 bg-gradient-to-t from-black w-[100%] z-10 flex justify-between">
+    <div className="absolute px-12 py-8 bg-gradient-to-b from-black w-[100%] z-10 flex justify-between">
       <svg
         viewBox="0 0 111 30"
         version="1.1"
@@ -63,6 +66,14 @@ const Header = () => {
       </svg>
       {user && (
         <div className="flex items-center gap-4">
+          {
+            <button
+              className="px-4 py-2 text-white bg-red-700 rounded-lg"
+              onClick={handleGptSearch}
+            >
+              GPT Search
+            </button>
+          }
           <div className="flex items-center justify-center">
             <img src={USER_AVATAR} />
           </div>
