@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTrailerVideo } from "../utils/MovieSlice";
+import { TMDB_KEY } from "../utils/constants";
 
 const useTrailerVideo = (movieId) => {
   const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
   const dispatch = useDispatch();
   const getMovieVideos = async () => {
     const data = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=fb7bb23f03b6994dafc674c074d01761`
+      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${TMDB_KEY}`
     );
     const json = await data.json();
 

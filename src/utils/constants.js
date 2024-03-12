@@ -20,3 +20,7 @@ export const SUPPORTED_LANGUAGES = [
     name: "Spanish",
   },
 ];
+
+export const OPENAI_KEY = import.meta.env.VITE_OPEN_AI_API_KEY;
+
+export const TMDB_KEY = import.meta.env.VITE_APP_TMDB_API_KEY;
