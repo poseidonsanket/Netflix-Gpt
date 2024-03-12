@@ -5,13 +5,15 @@ import { netflixBackground } from "../utils/constants";
 
 const GptSearch = () => {
   return (
-    <div>
+    <>
       <div className="fixed -z-10">
-        <img src={netflixBackground} alt="background image" />
+        <img className="h-screen object-cover md:w-screen" src={netflixBackground} alt="background image" />
       </div>
-      <GptSearchBar />
-      <GptMovieSuggestions />
-    </div>
+      <div className="pt-[40%] md:p-0">
+        <GptSearchBar />
+        <GptMovieSuggestions />
+      </div>
+    </>
   );
 };
 
