@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IMG_CDN_URL } from "../utils/constants";
 
 const MovieCard = ({ poster_path, title }) => {
+  if (!poster_path) return;
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
