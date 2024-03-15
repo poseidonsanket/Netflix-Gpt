@@ -74,3 +74,6 @@ Currently, two official plugins are available:
 - NetFlixGpt
   - Search Bar
   - Movie Suggestions
+
+# ScreenShots
+#
