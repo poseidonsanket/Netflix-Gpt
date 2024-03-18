@@ -74,3 +74,22 @@ Currently, two official plugins are available:
 - NetFlixGpt
   - Search Bar
   - Movie Suggestions
+
+# ScreenShots
+![image](https://github.com/poseidonsanket/Netflix-Gpt/assets/112609618/f672cf80-94ce-416c-a072-54ec2cbae7ea)
+
+![image](https://github.com/poseidonsanket/Netflix-Gpt/assets/112609618/bdf35423-d412-490b-a7f6-1d626d3e761c)
+
+![image](https://github.com/poseidonsanket/Netflix-Gpt/assets/112609618/321b0fa5-5c18-4ee2-b2d4-d29d0dd0bfdc)
+
+![image](https://github.com/poseidonsanket/Netflix-Gpt/assets/112609618/33d422d9-cdf6-4be6-80d7-513aeb6bd8f1)
+
+![image](https://github.com/poseidonsanket/Netflix-Gpt/assets/112609618/ce15715a-65d7-43c9-b811-fec579e875bd)
+
+![image](https://github.com/poseidonsanket/Netflix-Gpt/assets/112609618/15bc3a28-a4fb-480e-a96f-475c3452908a)
+
+
+
+
+
+
