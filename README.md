@@ -44,7 +44,7 @@ Currently, two official plugins are available:
 - usePopularMovies Custom hook
 - GPT Search Page
 - GPT Search Bar
-- (BONUS) Multi-language Feature in our App)
+- (BONUS) Multi-language Feature in our App
 - Get Open AI Api Key 
 - Gpt Search API Call
 - fetched gptMoviesSuggestions from TMDB
